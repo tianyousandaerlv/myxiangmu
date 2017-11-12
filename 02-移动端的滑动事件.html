@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #f40;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+		var box = document.querySelector('.box');	
+		/*滑动开始事件 touchstart*/
+		/*滑动事件也是只能addEventListener方式添加*/
+		box.addEventListener('touchstart',function () {
+				/*当手指在当前元素上触摸的时候就会触发 滑动过程只会触发一次*/
+				console.log('touchstart');
+		});
+		box.addEventListener('touchmove',function () {
+				/*当手指在元素上不断的滑动的时候会触发的事件  会持续触发*/
+				console.log('touchmove');
+		});
+		box.addEventListener('touchend',function () {
+				/*当手指在当前元素上触摸的结束时候就会触发 整个滑动过程只会触发一次*/
+				console.log('touchend');
+		});
+		/*滑动中事件 touchmove*/
+		/*滑动结束事件 touchend*/
+		/*滑动以外中断的时候会触发的事件 touchcancel*/
+	</script>
+</body>
+</html>

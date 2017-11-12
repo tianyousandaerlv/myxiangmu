@@ -1,0 +1,258 @@
+@mainColor: #d8505c;
+#layout {
+    /* 限制容器在PC端只能到640px宽度 */
+    max-width: 640px;
+    min-width: 300px;
+    margin: 0px auto;
+    background-color: #ccc;
+}
+
+
+/* 顶部通栏 */
+
+#topbar {
+    /* 吸顶要设置固定定位 相对于整个屏幕而言 */
+    position: fixed;
+    height: 40px;
+    z-index: 999;
+    /* 固定定位的宽度100%是相对于整个浏览器而言 */
+    width: 100%;
+    /* 因为固定的定位宽度100%相对于而整个屏幕在PC端会很宽 再次加一个max-width:640px */
+    max-width:640px;
+    .icon-logo {
+        width: 60px;
+        height: 24px;
+        background-image: url(../images/sprites.png);
+        /* 图片原始是400px 400px但是移动端使用图标的时候要缩小一半使用设置背景大小缩小一半200px 20ppx */
+        background-size: 200px 200px;
+        /* 图片缩小了一半 背景的定位也要缩小一半 */
+        background-position: 0 -109px;
+        position: absolute;
+        left: 10px;
+        top: 8px;
+    }
+    >form {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 70px;
+        /*  margin-left: 70px;
+           margin-right: 70px;  */
+        .icon-search {
+            width: 20px;
+            height: 20px;
+            background-image: url(../images/sprites.png);
+            background-size: 200px 200px;
+            background-position: -60px -109px;
+            position: absolute;
+            left: 75px;
+            top: 10px;
+        }
+        >input {
+            width: 100%;
+            height: 30px;
+            margin-top: 5px;
+            border-radius: 30px;
+            padding-left: 30px;
+        }
+    }
+    .login {
+        width: 60px;
+        height: 24px;
+        text-align: center;
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        color: #fff;
+    }
+}
+
+
+/* 轮播图 */
+
+#slide {
+    overflow: hidden;
+    position: relative;
+    /* 选中第一个列表轮播图 */
+    >ul:first-of-type {
+        /* 相对于父元素#slide元素的1000% */
+        width: 1000%;
+        /* translateX(-10%); -10%参照自身宽度的10% */
+        transform: translateX(-10%);
+        >li {
+            /* li的宽度相对于父元素ul  10% */
+            width: 10%;
+            float: left;
+            >a {
+                >img {
+                    /* 是相对于li的100%的宽度也就是一张图的宽度 */
+                    width: 100%;
+                }
+            }
+        }
+    }
+    /* 选中最后一个列表 点标记 */
+    >ul:last-of-type {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+        /* 绝对定位元素如果不加left和top值的话位置还是按照标准流来设置 */
+        >li {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            float: left;
+            margin-left: 10px;
+            &.active{
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+
+/* 导航菜单 */
+
+#nav {
+    padding: 5px;
+    background-color: #fff;
+    >ul {
+        >li {
+            width: 25%;
+            float: left;
+            text-align: center;
+            >a {
+                >img {
+                    width: 58px;
+                    height: 58px;
+                }
+                >p {
+                    font-size: 14px;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}
+
+
+/* 商品区域 */
+
+#products {
+    padding: 5px;
+    /* 秒杀商品 */
+    .seckill {
+        background-color: #fff;
+        margin-top: 15px;
+        border-radius: 5px;
+        .seckill-title {
+            line-height: 40px;
+            >div {
+                float: left;
+            }
+            .seckill-icon {
+                line-height: 35px;
+                >img {
+                    width: 20px;
+                    height: 25px;
+                }
+                margin-left: 10px;
+            }
+            .seckill-name {
+                font-size: 14px;
+                color: @mainColor;
+                margin-left: 10px;
+            }
+            .seckill-downTime {
+                margin-left: 10px;
+                >span {
+                    width: 15px;
+                    height: 15px;
+                    line-height: 15px;
+                    display: inline-block;
+                    text-align: center;
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+            .seckill-more {
+                float: right;
+            }
+        }
+        .seckill-body {
+            >ul {
+                >li {
+                    width: 33.33%;
+                    float: left;
+                    text-align: center;
+                    border-left: 1px solid #ccc;
+                    &:first-of-type {
+                        border-left: 0;
+                    }
+                    >a {
+                        >img {
+                            width: 60%;
+                        }
+                        >p {
+                            font-size: 12px;
+                            &:first-of-type {
+                                color: @mainColor;
+                            }
+                            &:last-of-type {
+                                /* 添加文本的中划线（删除线） */
+                                text-decoration: line-through;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* 京东超市 */
+    .jd-market {
+        margin-top: 15px;
+        background-color: #fff;
+        .jd-market-title {
+            >h4 {
+                line-height: 30px;
+                border-bottom: 1px solid #ccc;
+                position: relative;
+                padding-left: 20px;
+                font-weight: normal;
+                font-size: 14px;
+                &::before {
+                    content: "";
+                    width: 4px;
+                    height: 16px;
+                    background-color: @mainColor;
+                    position: absolute;
+                    left: 10px;
+                    top: 7px;
+                }
+            }
+        }
+        .jd-market-body {
+            .left {
+                width: 50%;
+                float: left;
+                >a {
+                    display: block;
+                    >img {
+                        width: 100%;
+                    }
+                }
+            }
+            .right {
+                width: 50%;
+                float: left;
+                >a {
+                    display: block;
+                    >img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

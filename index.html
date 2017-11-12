@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 移动端视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet/less" href="less/base.less">
+    <!-- 引入主页的样式 -->
+    <link rel="stylesheet/less" href="less/index.less">
+    <!-- 引入less编译器 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- layout就是京东主体布局容器 -->
+    <div id="layout">
+        <!-- 顶部通栏 -->
+        <header id="topbar">
+            <!-- JDlogo图标 -->
+            <i class="icon-logo"></i>
+            <!-- 表单输入框和搜索图标 -->
+            <form action="#">
+                <i class="icon-search"></i>
+                <input type="text" placeholder="请输入要搜索的商品">
+            </form>
+            <!-- 右侧登录链接 -->
+            <a href="#" class="login">登录</a>
+        </header>
+        <!-- 轮播图 -->
+        <section id="slide">
+            <!-- 轮播图列表 -->
+            <ul class="clearfix">
+                <li>
+                    <a href="#"><img src="images/l8.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l1.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l2.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l3.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l4.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l5.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l6.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l7.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l8.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/l1.jpg" alt=""></a>
+                </li>
+            </ul>
+            <!-- 点标记列表 -->
+            <ul class="clearfix">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+        <!-- 导航 -->
+        <nav id="nav">
+            <ul class="clearfix">
+                <li>
+                    <a href="#">
+                        <img src="images/nav0.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav1.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav2.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav3.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav4.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav5.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav6.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/nav7.png" alt="">
+                        <p>导航菜单</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 商品 -->
+        <section id="products">
+            <!-- 秒杀商品 -->
+            <div class="seckill">
+                <!-- 秒杀商品标题 -->
+                <div class="seckill-title clearfix">
+                    <!-- 秒杀图标 -->
+                    <div class="seckill-icon"><img src="images/seckill-icon.png" alt=""></div>
+                    <!-- 秒杀文字 -->
+                    <div class="seckill-name">掌上秒杀</div>
+                    <!-- 秒杀的倒计时 -->
+                    <div class="seckill-downTime">
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                    <!-- 更多秒杀 -->
+                    <div class="seckill-more">更多</div>
+                </div>
+                <!-- 秒杀商品内容 -->
+                <div class="seckill-body clearfix">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="images/detail01.jpg" alt="">
+                                <p>￥10.00</p>
+                                <p>￥10.00</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/detail01.jpg" alt="">
+                                <p>￥10.00</p>
+                                <p>￥10.00</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/detail01.jpg" alt="">
+                                <p>￥10.00</p>
+                                <p>￥10.00</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 京东超市 -->
+            <div class="jd-market">
+                <!-- 京东超市标题 -->
+                <div class="jd-market-title">
+                    <h4>京东超市</h4>
+                </div>
+                <!-- 京东超市内容 -->
+                <div class="jd-market-body clearfix">
+                    <div class="left">
+                        <a href="#"><img src="images/cp1.jpg" alt=""></a>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="bl bb"><img src="images/cp2.jpg" alt=""></a>
+                        <a href="#" class="bl"><img src="images/cp3.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <!-- 京东超市 -->
+            <div class="jd-market">
+                <!-- 京东超市标题 -->
+                <div class="jd-market-title">
+                    <h4>京东超市</h4>
+                </div>
+                <!-- 京东超市内容 -->
+                <div class="jd-market-body clearfix">
+                    <div class="left">
+                        <a href="#" class="br bb"><img src="images/cp5.jpg" alt=""></a>
+                        <a href="#" class="br"><img src="images/cp6.jpg" alt=""></a>
+                    </div>
+                    <div class="right">
+                        <a href="#"><img src="images/cp4.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <!-- 京东超市 -->
+            <div class="jd-market">
+                <!-- 京东超市标题 -->
+                <div class="jd-market-title">
+                    <h4>京东超市</h4>
+                </div>
+                <!-- 京东超市内容 -->
+                <div class="jd-market-body clearfix">
+                    <div class="left">
+                        <a href="#"><img src="images/cp1.jpg" alt=""></a>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="bl bb"><img src="images/cp2.jpg" alt=""></a>
+                        <a href="#" class="bl"><img src="images/cp3.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

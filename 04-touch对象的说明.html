@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+    .box {
+        width: 2000px;
+        height: 100px;
+        background-color: #f40;
+    }
+    </style>
+</head>
+<body>
+	<div class="box">
+		
+	</div>
+	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字	文字
+	<script>
+		var box  = document.querySelector('.box');
+		box.addEventListener('touchstart', function (e) {
+			/*e.touches[0]获取到第一个手指对象 touch对象*/
+			console.log(e.touches[0].clientX+'client');
+			/*如果页面有横向或者纵向滚动条 pageX和Y会把滚动条滚动的距离也算计去*/
+			console.log(e.touches[0].pageX+'page');
+			console.log(e.touches[0].screenX+'screen');
+			/*clientX clientY 表示获取手指在视口里面的水平和垂直坐标*/
+			/*pageX pageY 表示获取手指在页面的水平和垂直坐标*/
+			/*screenX screenY 表示手指在屏幕的水平和垂直坐标*/
+			/*但是在移动端通常没有横向滚动条 所以使用client和page都一样 通常用client系列*/
+		});
+	</script>
+</body>
+</html>

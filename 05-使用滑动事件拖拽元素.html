@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: hotpink;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+    var box = document.querySelector('.box');
+    /**
+     * 	1. 添加滑动开始和滑动中事件
+     * 	2. 在滑动开始的时候获取滑动开始的X轴坐标和Y轴坐标
+     * 	3. 在滑动中的时候获取滑动中的X轴的坐标和Y轴的坐标
+     * 	4. 计算滑动距离 水平 滑动中的X坐标-滑动开始的X轴坐标 垂直 滑动中Y轴坐标-滑动开始的Y轴坐标
+     * 	5. 把滑动的距离设置到box的位移
+     */
+    var startX = 0,
+        startY = 0,
+        moveX = 0,
+        moveY = 0,
+        distanceX = 0,
+        distanceY = 0;
+    box.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+
+//        console.log(startX + '---' + startY);
+    });
+    box.addEventListener('touchmove', function(e) {
+        moveX = e.touches[0].clientX;
+        moveY = e.touches[0].clientY;
+        distanceX = moveX - startX;
+        distanceY = moveY - startY;
+        /*console.log(distanceX+'---'+distanceY);*/
+        /*设置位移为滑动的距离*/
+        box.style.transform = 'translate(' + (currentX + distanceX) + 'px,' + (currentY + distanceY) + 'px)';
+        /*	往右和往下滑动的时候 distanceX 和 distanceY 就是正值
+        			往左和往上滑动的时候 distanceX 和 distanceY 就是负值*/
+    });
+    /*在滑动结束的时候记录滑动的最终距离*/
+    /*currentX当前div所在的X的位置
+    currentY当前div所在Y轴的位置*/
+    var currentX = 0,
+        currentY = 0;
+    box.addEventListener('touchend', function() {
+        currentX += distanceX;
+        currentY += distanceY;
+    });
+    </script>
+</body>
+
+</html>

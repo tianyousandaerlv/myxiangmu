@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #f40;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+    var box = document.querySelector('.box');
+    /*事件源参数 event 就是事件回调函数里面e*/
+    box.addEventListener('touchstart', function(e) {
+        /*e 是touchevent 触摸事件对象*/
+        /*e.touches 和  e.targetTouches 和 e.changedTouches 都是touchList对象 手指对象的集合 可能有多个手指对象 但是通常只考虑第一个对象*/
+        /*表示获取屏幕上的手指对象*/
+        console.log(e.touches);
+        /*获取当前元素上的手指对象*/
+        console.log(e.targetTouches);
+        /*获取手指改变后的手指对象 当手指从无到右 或者 从右到无的时候会出现*/
+        console.log(e.changedTouches);
+
+        /*e.touches  和 e.targetTouches 用任意一个都可以 这两个属性 通常在touchstart和touchmove里面 用来获取滑动的手指*/
+    });
+    box.addEventListener('touchmove', function(e) {
+        console.log(e.touches);
+        /*获取当前元素上的手指对象*/
+        console.log(e.targetTouches);
+        /*获取手指改变后的手指对象 当手指从无到右 或者 从右到无的时候会出现*/
+        console.log(e.changedTouches);
+    });
+    box.addEventListener('touchend', function(e) {
+    	/*当滑动结束的时候屏幕和元素上已经没手指  e.touches 和 e.targetTouches 无法使用*/
+    	/*在滑动结束事件里面使用e.changedTouches*/
+        console.log(e.touches);
+        /*获取当前元素上的手指对象*/
+        console.log(e.targetTouches);
+        /*获取手指改变后的手指对象 当手指从无到有 或者 从有到无的时候会出现*/
+        console.log(e.changedTouches);
+    });
+    </script>
+</body>
+
+</html>
